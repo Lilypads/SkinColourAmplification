@@ -5,7 +5,11 @@ linux {
 # !! Not tested, change to match your OpenCV (>= v4) installation #
     QT_CONFIG -= no-pkg-config
     CONFIG += link_pkgconfig
-    PKGCONFIG += opencv
+    PKGCONFIG += opencv4
+    
+    INCLUDEPATH += /usr/local/include/opencv4/opencv2
+    LIBS += -L/usr/local/lib -lopencv_core -lopencv_highgui -lopencv_imgproc
+    
 # !! Not tested, change to match your OpenCV (>= v4) installation #
 ###################################################################
 }
@@ -118,4 +122,4 @@ FORMS += \
     main/ui/VideoView.ui
 
 # Spare me those nasty C++ compiler warnings and pray instead
-QMAKE_CXXFLAGS += -W2
+QMAKE_CXXFLAGS += -W
